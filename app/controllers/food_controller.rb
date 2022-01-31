@@ -7,6 +7,14 @@ class FoodController < ApplicationController
   end
 
   def create
+    @food = Food.new(food_params)
+    @food.user = current_user
+    if @food.save
+      redirect_to root_path, notice: 'Succesfully added new food'
+    else
+      flash[:alert] = 'Error adding new food'
+      render :new
+    end
   end
 
   private
