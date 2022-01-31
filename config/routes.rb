@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  # root "articles#index"
+  devise_for :users
+  root "food#index"
   resources :food, only: [:index, :new, :create]
 end
