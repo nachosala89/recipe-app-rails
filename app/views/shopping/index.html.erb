@@ -5,6 +5,18 @@
 </div>
 
 <div class="container">
+  <%
+=begin%>
+ <% @inventory_foods.each do |f|%>
+    <p><%= f.food.name %><p>
+     <p><%= f.quantity %><p>
+  <% end %>
+  <% @recipes_foods.each do |f|%>
+     <p><%= f.food.name %><p>
+     <p><%= f.quantity %><p>
+  <% end %> 
+<%
+=end%>
   <table class="table my-2">
     <thead>
       <tr>
@@ -14,11 +26,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Apple</td>
-        <td>150 grams</td>
-        <td>$750</td>
-      </tr>
+      <% @missing_food.each do |key, value|%>
+        <tr>
+          <td><%= key.name %></td>
+          <td><%= key.measurement_unit %></td>
+          <td>$<%= key.price %></td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 </div>
