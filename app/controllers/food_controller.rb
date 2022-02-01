@@ -1,4 +1,5 @@
 class FoodController < ApplicationController
+  load_and_authorize_resource
   def index
     @food = Food.all
   end
@@ -7,7 +8,6 @@ class FoodController < ApplicationController
   end
 
   def create
-    @food = Food.new(food_params)
     @food.user = current_user
     if @food.save
       redirect_to root_path, notice: 'Succesfully added new food'
