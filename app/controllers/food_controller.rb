@@ -16,6 +16,11 @@ class FoodController < ApplicationController
       render :new
     end
   end
+  
+  def destroy
+    @food.destroy
+    redirect_to root_path
+  end
 
   private
 
