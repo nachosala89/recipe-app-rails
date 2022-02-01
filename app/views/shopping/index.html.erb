@@ -1,22 +1,10 @@
 <h1>Shopping List</h1>
 <div class="d-flex justify-content-around">
-  <p class="fs-3 fw-bold">Amount of food items to buy: 3</p>
-  <p class="fs-3 fw-bold">Total value of food needed: $819 </p>
+  <p class="fs-3 fw-bold">Amount of food items to buy:  <%= @missing_food.length %></p>
+  <p class="fs-3 fw-bold">Total value of food needed:  <%= @price %> </p>
 </div>
 
 <div class="container">
-  <%
-=begin%>
- <% @inventory_foods.each do |f|%>
-    <p><%= f.food.name %><p>
-     <p><%= f.quantity %><p>
-  <% end %>
-  <% @recipes_foods.each do |f|%>
-     <p><%= f.food.name %><p>
-     <p><%= f.quantity %><p>
-  <% end %> 
-<%
-=end%>
   <table class="table my-2">
     <thead>
       <tr>
