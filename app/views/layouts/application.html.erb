@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <%= render "shared/navigation_bar" %>
     <% flash.each do |name, msg| -%>
       <%= content_tag :div, msg, class: name %>
     <% end -%>
