@@ -1,4 +1,8 @@
 <h1>New Ingredient for <%= @recipe.name %> </h1>
+<p>
+  If you need an ingredient that isn't in the list, you can add it 
+  <%= link_to "here.", food_index_path %>
+</p>
 <% if @foods.blank? %>
   <p>The list of available ingredients is empty!</p>
 <% else %>
