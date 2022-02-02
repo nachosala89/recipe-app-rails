@@ -4,8 +4,7 @@ class FoodController < ApplicationController
     @food = Food.all
   end
 
-  def new
-  end
+  def new; end
 
   def create
     @food.user = current_user
@@ -16,7 +15,7 @@ class FoodController < ApplicationController
       render :new
     end
   end
-  
+
   def destroy
     @food.destroy
     redirect_to root_path
@@ -27,5 +26,4 @@ class FoodController < ApplicationController
   def food_params
     params.require(:food).permit(:name, :measurement_unit, :price)
   end
-
 end
