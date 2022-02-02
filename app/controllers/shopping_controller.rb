@@ -20,7 +20,7 @@ class ShoppingController < ApplicationController
   private
 
   def current_food_recipes
-    recipes = Recipe.includes(:user).where("user_id = #{current_user.id}")
+    recipes = Recipe.where("user_id = #{current_user.id}")
     food_recipes = {}
     recipes.each do |r|
       recipes_foods = RecipeFood.where("recipe_id = #{r.id}")
@@ -32,7 +32,7 @@ class ShoppingController < ApplicationController
   end
 
   def current_food_invetory
-    inventory = Inventory.includes(:user).where("user_id = #{current_user.id}")
+    inventory = Inventory.where("user_id = #{current_user.id}")
     food_invetory = {}
     inventory.each do |i|
       inventory_foods = InventoryFood.where("inventory_id = #{i.id}")
