@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.0'
 gem 'rubocop', '>= 1.0', '< 2.0'
 
-#Add devise
+# Add devise
 gem 'devise'
 
 # Add cancancan
