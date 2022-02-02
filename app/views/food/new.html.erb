@@ -12,7 +12,7 @@
   </div>
   <div class="mb-3">
     <%= form.label :price %>
-    <%= form.text_field :price, class:"form-control", placeholder: "price" %>
+    <%= form.number_field :price, class:"form-control", placeholder: "price", step:0.05 %>
   </div>
   <div class="mb-3">
     <%= form.submit  "Add Food", class:"btn btn-primary", data: { turbo: false } %>
