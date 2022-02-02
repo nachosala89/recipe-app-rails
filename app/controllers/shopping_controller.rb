@@ -1,7 +1,7 @@
 class ShoppingController < ApplicationController
   def index
-    food_recipes = get_food_recipes
-    food_invetory = get_food_invetory
+    food_recipes = current_food_recipes
+    food_invetory = current_food_invetory
     @missing_food = {}
     @price = 0
 
