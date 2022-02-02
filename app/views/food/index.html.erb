@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-end">
+  <%= link_to "Add Food", new_food_path ,class:"btn btn-primary float-right m-4" %>
+</div>
+
+ 
+<table class="table my-2">
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Measurement unit</th>
+      <th scope="col">Unit price</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+   <% @food.each do |f|%>
+    <tr>
+      <th scope="row"><%= f.name %></th>
+      <td><%= f.measurement_unit %></td>
+      <td>$<%= f.price %></td>
+      <td>
+        <%= button_to "Delete", food_path(id: f.id), method: :delete, class:'btn btn-danger my-3' if can? :destroy, f %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

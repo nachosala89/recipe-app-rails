@@ -1,0 +1,27 @@
+<h1>Shopping List</h1>
+<div class="d-flex justify-content-around">
+  <p class="fs-3 fw-bold">Amount of food items to buy:  <%= @missing_food.length %></p>
+  <p class="fs-3 fw-bold">Total value of food needed:  <%= @price %> </p>
+</div>
+
+<div class="container">
+  <table class="table my-2">
+    <thead>
+      <tr>
+        <th scope="row">Food</th>
+        <th scope="row">Measurement unit</th>
+        <th scope="row">Unit price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @missing_food.each do |key, value|%>
+        <tr>
+          <td><%= key.name %></td>
+          <td><%= key.measurement_unit %></td>
+          <td>$<%= key.price %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
