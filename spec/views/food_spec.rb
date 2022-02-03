@@ -13,7 +13,7 @@ RSpec.describe 'Food View', type: :system do
       visit root_path
       sleep(3)
       click_link 'Add Food'
-      sleep(3)      
+      sleep(3)
     end
 
     it 'shows the correct content' do
