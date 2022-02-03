@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lobster&display=swap');
 
+.bg-color {
+  background-color: rgba(248, 242, 242, 0.823);
+}
+
 .navbar {
   background-color: #ddc8c4 !important;
 }
