@@ -1,4 +1,4 @@
-<h1 class="my-5 text-center"><%= @recipe.name %><h1>
+<h1 class="my-5 text-center"><%= @recipe.name %></h1>
 <section class="row">
   <div class="col-md-6">
     <p>Preparation time: <%= @recipe.preparation_time %> hours</p>
@@ -31,12 +31,12 @@
       <tbody>
         <% @recipe.recipe_foods.each do |recipe_food| %>  
           <tr>
-            <td scope="row"><%= recipe_food.food.name %></td>
-            <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
-            <td>$ <%= recipe_food.food.price * recipe_food.quantity %></td>
-            <td>
-              <%= link_to 'Modify', recipe_recipe_food_path(recipe_food.id), method: :update %>
-              <%= button_to 'Remove', delete_recipe_food_path(@recipe.id, recipe_food.id), method: :delete %>
+            <td scope="row" class="col-5"><%= recipe_food.food.name %></td>
+            <td class="col-2"><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
+            <td class="col-2">$ <%= recipe_food.food.price * recipe_food.quantity %></td>
+            <td class="col-3 d-flex">
+              <button class="btn btn-primary my-3">Modify</button>
+              <%= button_to 'Remove', delete_recipe_food_path(@recipe.id, recipe_food.id), method: :delete, class:'btn btn-danger my-3' %>
             </td>
           </tr>
         <% end %>
