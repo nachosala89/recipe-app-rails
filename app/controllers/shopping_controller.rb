@@ -36,6 +36,7 @@ class ShoppingController < ApplicationController
 
   def current_food_invetory
     return {} if current_user.nil?
+
     inventory = Inventory.where("user_id = #{current_user.id}")
     food_invetory = {}
     inventory.each do |i|

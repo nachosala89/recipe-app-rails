@@ -26,6 +26,5 @@ RSpec.describe 'New Food', type: :system do
       expect(page).to have_content('kgs')
       expect(page).to have_content('$10.0')
     end
-
   end
 end

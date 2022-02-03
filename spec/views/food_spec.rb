@@ -19,6 +19,5 @@ RSpec.describe 'Food View', type: :system do
       click_link 'Add Food'
       expect(page).to have_current_path(new_food_path)
     end
-
   end
 end

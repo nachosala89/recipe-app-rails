@@ -32,13 +32,13 @@ RSpec.describe 'Navbar View', type: :system do
     end
 
     it 'Go to the correct path after clicking All Recipes' do
-        click_link 'All Recipes'
-        expect(page).to have_current_path(public_recipes_path)
+      click_link 'All Recipes'
+      expect(page).to have_current_path(public_recipes_path)
     end
 
     it 'Go to the correct path after clicking Shopping List' do
-        click_link 'Shopping List'
-        expect(page).to have_current_path(shopping_index_path)
+      click_link 'Shopping List'
+      expect(page).to have_current_path(shopping_index_path)
     end
   end
 end
