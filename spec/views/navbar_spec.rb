@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Food View', type: :system do
+RSpec.describe 'Navbar View', type: :system do
   describe 'General functionality food_index' do
     before(:each) do
       @user = User.new(name: 'Joe', email: 'joe@mail.com', password: 'pass123')
