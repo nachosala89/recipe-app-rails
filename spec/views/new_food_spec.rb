@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'New Food', type: :system do
-  describe 'General functionality food_index' do
+  describe 'General functionality new_food' do
     before(:each) do
       @user = User.new(name: 'Joe', email: 'joe@mail.com', password: 'pass123')
       @user.save
