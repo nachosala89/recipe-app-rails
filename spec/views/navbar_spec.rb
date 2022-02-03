@@ -11,6 +11,7 @@ RSpec.describe 'Food View', type: :system do
       click_button 'Log in'
       sleep(3)
       visit root_path
+      sleep(3)
     end
 
     it 'shows the correct content' do
