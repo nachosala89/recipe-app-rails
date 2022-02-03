@@ -1,9 +1,11 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.where(user: current_user)
+    @current_user = current_user
+    @recipes = Recipe.where(user: @current_user)
   end
 
   def public
+    @current_user = current_user
     @recipes = Recipe.where(public: true)
   end
 

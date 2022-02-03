@@ -1,5 +1,6 @@
 class ShoppingController < ApplicationController
   def index
+    @current_user = current_user
     food_recipes = current_food_recipes
     food_invetory = current_food_invetory
     @missing_food = {}
@@ -20,6 +21,8 @@ class ShoppingController < ApplicationController
   private
 
   def current_food_recipes
+    return {} if current_user.nil?
+
     recipes = Recipe.where("user_id = #{current_user.id}")
     food_recipes = {}
     recipes.each do |r|
@@ -32,6 +35,8 @@ class ShoppingController < ApplicationController
   end
 
   def current_food_invetory
+    return {} if current_user.nil?
+
     inventory = Inventory.where("user_id = #{current_user.id}")
     food_invetory = {}
     inventory.each do |i|
