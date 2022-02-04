@@ -1,0 +1,18 @@
+<h1 class="my-5 text-center">Public recipes</h1>
+<% if @recipes.blank? %>
+  <h2>There's no public recipe!<h2>
+<% else %>
+  <% @recipes.each do |recipe| %>
+    <article class="row d-flex border p-3 mb-5">
+      <div class="col-md-4">
+        <h2><%= link_to recipe.name, recipe_path(recipe.id), method: :get %></h2>
+        <p>By  <%= recipe.user.name %></p>
+      </div>
+      <div class="col-md-8">
+        <p>Total food items: <%= recipe.recipe_foods.length %></p>
+        <p>Total price: $<%= recipe.total_price %></p>
+      </div>
+    </article>
+  <% end %>  
+<% end %>
+<%= link_to 'Add new recipe', new_recipe_path, class:"btn btn-primary" %>

@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <a class="navbar-brand fs-3" href="#">Recipes App</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to "Food", food_index_path ,class:"nav-link fs-5" %>
+        </li>
+        <% unless current_user.nil? %>
+          <li class="nav-item">
+            <%= link_to "My Recipes", recipes_path ,class:"nav-link fs-5" %>
+          </li>
+        <% end %>
+        <li class="nav-item">
+          <%= link_to "All Recipes", public_recipes_path ,class:"nav-link fs-5" %>
+        </li>
+        <% unless current_user.nil? %>
+          <li class="nav-item">
+            <%= link_to "Shopping List", shopping_index_path ,class:"nav-link fs-5" %>
+          </li>
+        <% end %>
+        <% if current_user.nil? %>
+          <li class="nav-item">
+            <%= link_to "Log in", new_user_session_path ,class:"nav-link fs-5" %>
+          </li>
+        <% else %> 
+          <li class="nav-item">
+            <%= link_to 'Logout', user_sign_out_path ,class:"nav-link fs-5" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <% unless current_user.nil? %>
+      <span id="username-navbar">User: <%= current_user.name %></span>
+    <% end %>
+  </div>
+</nav>

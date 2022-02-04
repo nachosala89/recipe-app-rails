@@ -1,0 +1,21 @@
+<% if @current_user.nil? %>
+  <h2>You must be logged in to see your recipes!</h2>
+<% else %>
+  <h1 class="my-5 text-center">Your recipes</h1>
+  <% if @recipes.blank? %>
+    <h2>You don't have any existing recipe of your own!<h2>
+  <% else %>
+    <% @recipes.each do |recipe| %>
+      <article class="row d-flex border p-3 mb-5">
+        <div class="col-md-4">
+          <h2><%= link_to recipe.name, recipe_path(recipe.id), method: :get %></h2>
+          <%= link_to 'Remove', recipe_path(recipe.id), data: { "turbo-method": :delete }, class:'btn btn-danger my-3' %>
+        </div>
+        <div class="col-md-8">
+          <p><%= recipe.description %></p>
+        </div>
+      </article>
+    <% end %>  
+  <% end %>
+  <%= button_to 'Add new recipe', new_recipe_path, method: :get, class:"btn btn-primary" %>
+<% end %>
