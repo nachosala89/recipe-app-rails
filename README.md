@@ -4,6 +4,13 @@
 
 > In this project we have build a Recipe App usign Ruby on Rails.
 
+
+![screenshot](./readme_img/screenshot.png)
+
+# ERD
+
+![ERD](./readme_img/recipe_app_erd.png)
+
 ## Built With
 
 - Ruby
