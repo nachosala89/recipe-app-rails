@@ -5,9 +5,11 @@ RSpec.describe Recipe, type: :model do
     before(:all) do
       @user = User.create(name: 'John Smith', password: '123456', email: 'johnsmith@gmail.com')
     end
-    subject { Recipe.create(name: 'Homemade Stuffing', user: @user, description: "This stuffing is a perennial
+    subject do
+      Recipe.create(name: 'Homemade Stuffing', user: @user, description: "This stuffing is a perennial
       favorite—if you didn't make it at Thanksgiving, consider giving it a whirl alongside your
-      holiday roast before the year is up.", preparation_time: 0.5, cooking_time: 1.5, public: true) }
+      holiday roast before the year is up.", preparation_time: 0.5, cooking_time: 1.5, public: true)
+    end
     before { subject.save }
     after(:all) do
       @user.destroy
