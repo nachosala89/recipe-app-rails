@@ -11,6 +11,11 @@ RSpec.describe Food, type: :model do
     @food.user_id = @user.id
   end
 
+  it 'user_id should be present' do
+    @food.user_id = nil
+    expect(@food).to_not be_valid
+  end
+
   it 'name should be present' do
     @food.name = nil
     expect(@food).to_not be_valid
