@@ -11,6 +11,10 @@
 
 ![ERD](./readme_img/recipe_app_erd.png)
 
+# Live Version
+
+https://recipe-app-nacho.herokuapp.com/
+
 ## Built With
 
 - Ruby
